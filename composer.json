@@ -1,0 +1,10 @@
+{
+    "require": {
+        "willdurand/hateoas": "v2.1.0"
+    },
+    "require-dev": {
+        "symfony/browser-kit": ">=2.3,<2.4-dev",
+        "phpunit/phpunit": "3.9.*@dev"
+    },
+    "minimum-stability": "dev"
+}
