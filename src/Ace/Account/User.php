@@ -12,8 +12,18 @@ class User
 {
     /** @Serializer\XmlAttribute */
     private $id;
-    private $firstName;
-    private $lastName;
+    private $first_name;
+    private $last_name;
+    
+    public function __construct($id, $first, $last)
+    {
+        $this->id = $id;
+        $this->first_name = $first;
+        $this->last_name = $last;
+    }
 
-    public function getId() {}
+    public function getId()
+    {
+        return $this->id;
+    }
 }
