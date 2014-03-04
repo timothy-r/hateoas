@@ -1,6 +1,9 @@
 <?php
 
 use Ace\Account\User;
+use Hateoas\HateoasBuilder;
+use JMS\Serializer\Annotation as Serializer;
+use Hateoas\Configuration\Annotation as Hateoas;
 
 class UserTest extends PHPUnit_Framework_TestCase
 {
@@ -13,6 +16,14 @@ class UserTest extends PHPUnit_Framework_TestCase
 
     public function testCanGenerateJson()
     {
+        $hateoas = HateoasBuilder::create()->build();
+        $user = new User(101, 'Charlie', 'Bradford');
 
+        $root = new JMS\Serializer\Annotation\XmlRoot('c');
+        $attr = new JMS\Serializer\Annotation\XmlAttribute('c');
+        $rel = new Hateoas\Relation;
+
+        $json = $hateoas->serialize($user, 'json');
+        var_dump($json);
     }
 }

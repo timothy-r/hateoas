@@ -1,16 +1,18 @@
 <?php namespace Ace\Account;
 
-use JMS\Serializer\Annotation as Serializer;
-use Hateoas\Configuration\Annotation as Hateoas;
+use JMS\Serializer\Annotation\XmlRoot;
+use JMS\Serializer\Annotation\XmlAttribute;
+
+use Hateoas\Configuration\Annotation\Relation;
 
 /**
- * @Serializer\XmlRoot("user")
+ * @XmlRoot("user")
  *
- * @Hateoas\Relation("self", href = "expr('/api/users/' ~ object.getId())")
+ * @Relation("self", href = "expr('/api/users/' ~ object.getId())")
  */
 class User
 {
-    /** @Serializer\XmlAttribute */
+    /** @XmlAttribute */
     private $id;
     private $first_name;
     private $last_name;
